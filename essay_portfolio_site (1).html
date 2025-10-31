@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essays</title>
+  <style>
+    body {
+      font-family: "Courier New", Courier, monospace;
+      background-color: white;
+      color: black;
+      margin: 3rem 6rem;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+      font-family: "Courier New", Courier, monospace;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: blue;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-family: "Courier New", Courier, monospace;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    .essay-content {
+      white-space: pre-wrap;
+      font-family: "Courier New", Courier, monospace;
+    }
+    .essay-block {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="essay-list">
+    <ul>
+      <li><a href="#" onclick="showEssay('essay1')">On the Value of Simplicity</a></li>
+      <li><a href="#" onclick="showEssay('essay2')">Designing for Humans</a></li>
+      <li><a href="#" onclick="showEssay('essay3')">The Future of Urban Mobility</a></li>
+    </ul>
+  </div>
+
+  <!-- Essay Blocks -->
+  <div id="essay1" class="essay-block">
+    <div class="essay-content">
+      <p>How quick the mound of scramble eggs turns from more than half the mound of scrambled eggs to less than half the mound of scrambled eggs... (essay text continues)</p>
+    </div>
+    <p><a href="#" onclick="goHome()">← Back to list</a></p>
+  </div>
+
+  <div id="essay2" class="essay-block">
+    <div class="essay-content">
+      <p>Good design begins with empathy. When we understand the people we're creating for, we can build tools, interfaces, and experiences that feel natural rather than forced.</p>
+    </div>
+    <p><a href="#" onclick="goHome()">← Back to list</a></p>
+  </div>
+
+  <div id="essay3" class="essay-block">
+    <div class="essay-content">
+      <p>Cities are shifting toward sustainable transport. The balance between efficiency and human experience will define how we move, interact, and inhabit our shared spaces.</p>
+    </div>
+    <p><a href="#" onclick="goHome()">← Back to list</a></p>
+  </div>
+
+  <script>
+    function showEssay(id) {
+      document.getElementById('essay-list').style.display = 'none';
+      const essays = document.querySelectorAll('.essay-block');
+      essays.forEach(e => e.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function goHome() {
+      const essays = document.querySelectorAll('.essay-block');
+      essays.forEach(e => e.style.display = 'none');
+      document.getElementById('essay-list').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
